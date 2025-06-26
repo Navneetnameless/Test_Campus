@@ -9,13 +9,13 @@ env_vars = {
   
   "DATABASE_URL_PRIMARY": "mongodb+srv://narutouzumaki22551:narutouzumaki22551@cluster0.econe.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
   # Logs Channel Username Without @
-  "CACHE_CHANNEL": "logs_hai_bhai",
+  "CACHE_CHANNEL": "",
   # Force Subs Channel username without @
-  "CHANNEL": "Manhwa_Weebs",
+  "CHANNEL": "",
   # {chap_num}: Chapter Number
   # {chap_name} : Manga Name
   # Ex : Chapter {chap_num} {chap_name} @Manhwa_Arena
-  "FNAME": "[{chap_num}] [MW] {chap_name} [@Manhwa_Weebs]"
+  "FNAME": "[MC] [{chap_num}] {chap_name} @Manga_Campus"
 }
 
 dbname = env_vars.get('DATABASE_URL_PRIMARY') or env_vars.get('DATABASE_URL')
