@@ -11,7 +11,7 @@ env_vars = {
   #Get For @BotFather
   "BOT_TOKEN": os.getenv("BOT_TOKEN", ""),
   # Get For tembo.io
-  "DATABASE_URL_PRIMARY": "",
+  "DATABASE_URL_PRIMARY": "mongodb+srv://Yuuichi:Yuuichi@cluster0.z3hyhbb.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
   # Logs Channel Username Without @
   "CACHE_CHANNEL": "Dump2075",
   # Force Subs Channel username without @
