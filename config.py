@@ -7,7 +7,7 @@ env_vars = {
   "BOT_TOKEN": "7857406628:AAGT41Xak2UxFaIFDCAGYEq4uh-lt6NkFRY",
   # Get For tembo.io
   
-  "DATABASE_URL_PRIMARY": "mongodb+srv://narutouzumaki22551:narutouzumaki22551@cluster0.econe.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
+  "DATABASE_URL_PRIMARY": "mongodb+srv://Yuuichi:Yuuichi@cluster0.z3hyhbb.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
   # Logs Channel Username Without @
   "CACHE_CHANNEL": "",
   # Force Subs Channel username without @
