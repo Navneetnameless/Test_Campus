@@ -3,16 +3,16 @@ Pyrofork==2.3.67
 beautifulsoup4==4.8.2
 requests==2.32.4
 Pillow==9.5.0
-tgcrypto  # No version pin available on PyPI
+tgcrypto
 sqlmodel==0.0.6
-asyncpg  # No version pin, can add if needed
-psycopg2-binary  # No version pin, can add if needed
-aiosqlite  # No version pin, can add if needed
+asyncpg
+psycopg2-binary
+aiosqlite
 fpdf2==2.6.0
-SQLAlchemy>=1.4  # sqlmodel requires 1.4+
+SQLAlchemy>=1.4
 psutil==5.9.0
-alembic  # No version pin, often matches SQLAlchemy
-loguru  # No version pin needed, stable
-flask  # Add version pin if needed, e.g., flask==2.3.3
-gunicorn  # For deployment, version optional
-cloudscraper  # No version pin
+alembic
+loguru
+flask
+gunicorn
+cloudscraper
