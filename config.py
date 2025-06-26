@@ -4,13 +4,22 @@ import os
 load_dotenv()
 
 env_vars = {
-    "API_HASH": os.getenv("API_HASH", ""),
-    "API_ID": os.getenv("API_ID", ""),
-    "BOT_TOKEN": os.getenv("BOT_TOKEN", ""),
-    "MONGO_URI": os.getenv("MONGO_URI", "mongodb+srv://Yuuichi:Yuuichi@cluster0.z3hyhbb.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"),  # ✅ Add this
-    "CACHE_CHANNEL": os.getenv("CACHE_CHANNEL", "Dump2075"),
-    "CHANNEL": os.getenv("CHANNEL", "Manga_Campus"),
-    "FNAME": os.getenv("FNAME", "[MC] [{chap_num}] {chap_name} @Manga_Campus")
+  # Get From my.telegram.org
+  "API_HASH": os.getenv("API_HASH", ""),
+  # Get From my.telegram.org
+  "API_ID": os.getenv("API_ID", ""),
+  #Get For @BotFather
+  "BOT_TOKEN": os.getenv("BOT_TOKEN", ""),
+  # Get For tembo.io
+  "DATABASE_URL_PRIMARY": "mongodb+srv://Yuuichi:Yuuichi@cluster0.z3hyhbb.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
+  # Logs Channel Username Without @
+  "CACHE_CHANNEL": "Dump2075",
+  # Force Subs Channel username without @
+  "CHANNEL": "",
+  # {chap_num}: Chapter Number
+  # {chap_name} : Manga Name
+  # Ex : Chapter {chap_num} {chap_name} @Manhwa_Arena
+  "FNAME": "[MC] [{chap_num}] {chap_name} @Manga_Campus"
 }
 
-dbname = os.getenv("MONGO_DB_NAME", "manga")  # ✅ Optional: can pass db name separately
+dbname = env_vars.get('DATABASE_URL_PRIMARY') or env_vars.get('DATABASE_URL')
