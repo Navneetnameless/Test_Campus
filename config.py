@@ -1,15 +1,15 @@
 env_vars = {
   # Get From my.telegram.org
-  "API_HASH": "057fd0be9d7c38526b143c582bceb24b",
+  "API_HASH": "",
   # Get From my.telegram.org
-  "API_ID": "20445873",
+  "API_ID": "",
   #Get For @BotFather
-  "BOT_TOKEN": "7555052063:AAFBfk7tLXeo7GlnCPf6AIv7UgM7gte0aBY",
+  "BOT_TOKEN": "",
   # Get For tembo.io
   
-  "DATABASE_URL_PRIMARY": "mongodb+srv://Yuuichi:Yuuichi@cluster0.z3hyhbb.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
+  "DATABASE_URL_PRIMARY": "",
   # Logs Channel Username Without @
-  "CACHE_CHANNEL": "",
+  "CACHE_CHANNEL": "Dump2075",
   # Force Subs Channel username without @
   "CHANNEL": "",
   # {chap_num}: Chapter Number
