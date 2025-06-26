@@ -3,6 +3,7 @@ from motor.motor_asyncio import AsyncIOMotorClient, AsyncIOMotorDatabase
 from pydantic import BaseModel, Field as PydanticField
 from bson import ObjectId
 from tools import LanguageSingleton
+import os  # ✅ for environment variable access
 
 T = TypeVar("T", bound=BaseModel)
 
@@ -12,7 +13,6 @@ T = TypeVar("T", bound=BaseModel)
 # -----------------------------
 
 class PyObjectId(ObjectId):
-
     @classmethod
     def __get_validators__(cls):
         yield cls.validate
@@ -67,14 +67,17 @@ class MangaName(BaseModel):
 # -----------------------------
 
 class DB(metaclass=LanguageSingleton):
-    def __init__(self, uri: str = "mongodb://localhost:27017", db_name: str = "manga"):
+    def __init__(self, uri: str = None, db_name: str = "manga"):
+        if uri is None:
+            uri = os.getenv("MONGO_URI")
+            if not uri:
+                raise Exception("MONGO_URI environment variable not set.")
         self.client: AsyncIOMotorClient = AsyncIOMotorClient(uri)
         self.db: AsyncIOMotorDatabase = self.client[db_name]
 
     async def connect(self):
-        # Optional connection test
         try:
-            await self.client.admin.command('ping')  # Verify connection
+            await self.client.admin.command('ping')
             print("MongoDB connected successfully.")
         except Exception as e:
             print(f"Error connecting to MongoDB: {e}")
@@ -93,20 +96,15 @@ class DB(metaclass=LanguageSingleton):
         else:
             await self.db[collection_name].update_one({"_id": document.id}, {"$set": document.dict(by_alias=True)})
 
-
-
     async def get(self, collection: str, query: dict) -> Optional[dict]:
         collection_name = collection.__name__.lower()
-        s = await self.db[collection_name].find_one({"url": query[0]})
-        return s
-
+        return await self.db[collection_name].find_one({"url": query[0]})
 
     async def get_all(self, model: Type[T]) -> List[T]:
         collection_name = model.__name__.lower()
         cursor = self.db[collection_name].find()
         documents = await cursor.to_list(length=None)
         return [model(**doc) for doc in documents]
-
 
     async def erase(self, collection: str, query: dict):
         collection_name = collection.__name__.lower()
