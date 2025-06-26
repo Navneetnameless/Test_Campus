@@ -4,7 +4,7 @@ env_vars = {
   # Get From my.telegram.org
   "API_ID": "20445873",
   #Get For @BotFather
-  "BOT_TOKEN": "7555052063:AAF7qf6x_xRyuIx_8FYIkIL_f05E0VM6A4I",
+  "BOT_TOKEN": "7555052063:AAFBfk7tLXeo7GlnCPf6AIv7UgM7gte0aBY",
   # Get For tembo.io
   
   "DATABASE_URL_PRIMARY": "mongodb+srv://Yuuichi:Yuuichi@cluster0.z3hyhbb.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
